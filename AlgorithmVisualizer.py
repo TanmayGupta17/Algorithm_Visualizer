@@ -451,9 +451,12 @@ def main():
                     sorting = True
                     graph_algo_generator = dfs(draw_info, graph, start_node, speed)
                 elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS and not home_screen:
-                    speed = min(50, speed + 1)
-                elif event.key == pygame.K_MINUS and not home_screen:
-                    speed = max(1, speed - 1)
+                    if(speed == 0.5):
+                        speed = 1
+                    else:
+                        speed = min(50, speed + 1)
+                elif event.key == pygame.K_MINUS and not home_screen:  
+                    speed = max(0.5, speed - 1)
 
     pygame.quit()
 
